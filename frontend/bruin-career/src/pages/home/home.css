@@ -34,9 +34,14 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 30px;
+    font-size: 40px;
     line-height: 29px;
     color: #000000;
+    margin-bottom: 20px;
+}
+
+.category-image {
+    width: 40px,
 }
 
 .project-title {

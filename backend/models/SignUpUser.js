@@ -2,12 +2,21 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  email: { type: String },
+  //parentId: mongoose.ObjectId
   firstName: { type: String },
   lastName: { type: String },
+  email: { type: String },
   username: { type: String },
   password: { type: String },
   confirm_password: { type: String },
+  checkLogin: { type: Boolean },
+
+  phone: { type: Number },
+  dateOfBirth: { type: String },
+  university: { type: String },
+  major: { type: String },
+  graduation: { type: String },
+  avatar: { type: Buffer },
 });
 
 // const userSchema = new Schema({

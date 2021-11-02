@@ -10,15 +10,23 @@ dream job.
 💻 Technologies
 
 + React.js
++ Redux
 + Material UI
 + Node.js
 + Express
 + MongoDB
++ EmailJs
++ Google MAP API
 + HTML/CSS
 
 ✅ Functionalities
 
-
++ User Registration and Login/Authorization 
++ Searching Project by category/title/contributors
++ Adding/Showing/Delete/Update Portfolio and Projects information
++ Commenting on a Post for user account
++ Contact form via EmailJs system
++ Using Google map API
 
 🏃 How to Run BruinCareer
 

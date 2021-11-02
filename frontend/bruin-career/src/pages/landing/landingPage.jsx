@@ -1,12 +1,17 @@
 import React from "react";
 
+/* Import Redux */
+import { useDispatch, useSelector } from "react-redux";
+
 /* Adding Material UI libs */
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
 
 /* Adding components */
 import Image from "./images/bruinbackground.jpg";
 import Signin from "../../components/signin/signin.component";
+import { storeCheckLogin } from "../../redux/redux";
 
 /* Adding Material UI styles */
 var styles = {
@@ -52,7 +57,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Landing = () => {
+const Landing = (props) => {
+  const checkLogin = useSelector((state) => state.checkLogin);
+  const username = useSelector((state) => state.username);
+  const dispatch = useDispatch();
+
+  const setLogout = () => {
+    dispatch(storeCheckLogin(false));
+  };
+
   const classes = useStyles();
   return (
     <div>
@@ -68,7 +81,22 @@ const Landing = () => {
           </div>
         </div>
         <div className={classes.signin}>
-          <Signin />
+          {checkLogin ? (
+            <h> 
+              Hey {username}, do you want to sign out?
+              <div>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  style={{ marginTop: 9, marginLeft: 2 }} 
+                  onClick={setLogout}
+                  >Sign out
+                </Button>
+              </div>
+            </h>
+          ) : (
+            <Signin />
+          )}
         </div>
       </div>
     </div>
